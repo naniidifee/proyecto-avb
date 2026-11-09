@@ -1,0 +1,2 @@
+#VARIABLES DE ENTORNO (contiene secret key, apis, etc)
+.env
