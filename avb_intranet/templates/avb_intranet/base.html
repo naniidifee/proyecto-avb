@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Liceo Antonio Varas de la Barra{% endblock %}</title>
     
+    <!-- Tu archivo CSS local cargado desde static -->
+    <link rel="stylesheet" href="{% static 'recursos/css/style.css' %}">
+    
     {% block extra_css %}{% endblock %}
 </head>
 <body>
@@ -13,9 +16,9 @@
     <header>
         <h1>Liceo Antonio Varas de la Barra</h1>
         <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Intranet</a>
-            <a href="#">Contacto</a>
+            <a href="{% url 'avb_intranet:index' %}">Inicio</a>
+            <a href="{% url 'avb_intranet:horarios' %}">Horarios</a>
+            <a href="{% url 'avb_intranet:mapa' %}">Mapa Recintos</a>
         </nav>
     </header>
 
@@ -25,7 +28,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 - Todos los derechos reservados</p>
+        <p>&copy; 2026 Liceo TP Antonio Varas de la Barra - Todos los derechos reservados.</p>
     </footer>
 
     {% block extra_js %}{% endblock %}
