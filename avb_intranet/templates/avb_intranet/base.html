@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Liceo TP Antonio Varas de la Barra{% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-info">
+      <span><i class="fas fa-map-marker-alt"></i> Arica, Chile</span>
+      <span><i class="fas fa-phone"></i> +56 58 2234567</span>
+      <span><i class="fas fa-envelope"></i> contacto@liceoavb.cl</span>
+    </div>
+    <div class="topbar-links">
+      <a href="#transparencia"><i class="fas fa-shield-alt"></i> Ley de Transparencia</a>
+      <a href="#contacto"><i class="fas fa-headset"></i> Mesa de Ayuda</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="{% url 'index' %}" class="nav-logo">
+      <div class="nav-logo-text">
+        <strong>Liceo Antonio Varas</strong>
+        <span>de la Barra • Arica</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="{% url 'index' %}">Inicio</a></li>
+      <li><a href="{% url 'especialidades' %}">Especialidades TP</a></li>
+      <li><a href="{% url 'horarios' %}">Horarios</a></li>
+      <li><a href="{% url 'noticias_lista' %}">Noticias</a></li>
+    </ul>
+    <a href="{% url 'intranet' %}" class="btn-intranet">
+      <i class="fas fa-user-shield"></i> Intranet
+    </a>
+  </nav>
+
+  <!-- BLOQUE PRINCIPAL DE CONTENIDO -->
+  {% block content %}
+  {% endblock %}
+
+</body>
+</html>
